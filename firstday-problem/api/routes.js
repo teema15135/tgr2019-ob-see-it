@@ -12,5 +12,4 @@ module.exports = function(app) {
 
     app.get('/webhook', line.pushBlock);
     app.post('/webhook', line.replyBlock);
-
 };
