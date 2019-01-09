@@ -1,0 +1,13 @@
+cs43l22.c:372:10:cs43l22_SetFrequency	0	static
+cs43l22.c:452:10:cs43l22_Reset	0	static
+cs43l22.c:345:10:cs43l22_SetVolume	16	static
+cs43l22.c:135:10:cs43l22_Init	24	static
+cs43l22.c:219:6:cs43l22_DeInit	0	static
+cs43l22.c:230:10:cs43l22_ReadID	8	static
+cs43l22.c:384:10:cs43l22_SetMute.part.0	8	static
+cs43l22.c:384:10:cs43l22_SetMute	8	static
+cs43l22.c:293:10:cs43l22_Resume	24	static
+cs43l22.c:274:10:cs43l22_Pause	8	static
+cs43l22.c:321:10:cs43l22_Stop	8	static
+cs43l22.c:248:10:cs43l22_Play	16	static
+cs43l22.c:413:10:cs43l22_SetOutputMode	8	static

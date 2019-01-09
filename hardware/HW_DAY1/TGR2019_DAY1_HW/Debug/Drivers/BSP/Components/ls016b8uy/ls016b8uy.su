@@ -1,0 +1,17 @@
+ls016b8uy.c:242:10:ls016b8uy_GetLcdPixelHeight	0	static
+ls016b8uy.c:386:6:ls016b8uy_SetDisplayWindow	12	static
+ls016b8uy.c:252:10:ls016b8uy_ReadID	8	static
+ls016b8uy.c:232:10:ls016b8uy_GetLcdPixelWidth	0	static
+ls016b8uy.c:347:6:ls016b8uy_WriteReg	16	static
+ls016b8uy.c:208:6:ls016b8uy_DisplayOn	8	static
+ls016b8uy.c:132:6:ls016b8uy_Init	40	static
+ls016b8uy.c:219:6:ls016b8uy_DisplayOff	8	static
+ls016b8uy.c:265:6:ls016b8uy_SetCursor	24	static
+ls016b8uy.c:288:6:ls016b8uy_WritePixel	16	static
+ls016b8uy.c:318:10:ls016b8uy_ReadPixel	16	static
+ls016b8uy.c:433:6:ls016b8uy_DrawHLine	32	static
+ls016b8uy.c:474:6:ls016b8uy_DrawVLine	24	static
+ls016b8uy.c:603:13:ls016b8uy_DrawRGBHLine	40	static
+ls016b8uy.c:498:6:ls016b8uy_DrawBitmap	32	static
+ls016b8uy.c:535:6:ls016b8uy_DrawRGBImage	32	static
+ls016b8uy.c:366:9:ls016b8uy_ReadReg	8	static
