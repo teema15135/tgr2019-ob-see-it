@@ -10,6 +10,10 @@ module.exports = function(app) {
     app.post('/addMultiUser', user.addMultiUser);
     app.delete('/deleteUser/:id/', user.delUser);
 
+    app.post('/testPost', function(req, res) {
+        console.log(req.body);
+    });
+
     app.get('/webhook', line.pushBlock);
     app.post('/webhook', line.replyBlock);
 };
