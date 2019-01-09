@@ -11,7 +11,7 @@ var options = {
     }
 }
 
-var connect = mongojs(databaseUrl, collections);
+var connect = mongojs(databaseUrl, collections, options);
 
 module.exports = {
     connect: connect
