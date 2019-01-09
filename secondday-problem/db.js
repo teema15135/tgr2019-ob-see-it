@@ -2,7 +2,7 @@
 
 var mongojs = require('mongojs');
 
-var databaseUrl = 'mongodb://localhost/hwData';
+var databaseUrl = 'obiwan:123456789@localhost/hwData';
 var collections = ['temperature'];
 var options = {
     "auth": {
