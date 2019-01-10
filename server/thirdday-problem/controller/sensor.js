@@ -5,6 +5,7 @@ var Sensor = mongoose.model('SensorData');
 
 exports.recvSensor = function (req, res) {
     var payload = req.body.DevEUI_uplink.payload_hex;
+    console.log('receive payload: ' + payload);
     let obj = {
         pin: Number('0x' + payload.substr(4, 4)),
         pout: Number('0x' + payload.substr(12, 4)),
@@ -13,6 +14,7 @@ exports.recvSensor = function (req, res) {
     }
     var new_Data = new Sensor(obj);
     new_Data.save(function (err, docs) {
+        if (err) console.log(err);
         console.log('receive and record the sensor data...');
     });
 }
