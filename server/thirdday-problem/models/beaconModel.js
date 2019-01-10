@@ -9,7 +9,8 @@ var beaconSchema = new Schema({
         default: Date.now
     },
     status: {
-        type: String
+        type: String,
+        required: 'must have status'
     }
 });
 

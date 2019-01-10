@@ -5,6 +5,12 @@ var Beacon = mongoose.model('BeaconData');
 var ML = mongoose.model('MLData');
 
 exports.recvBeacon = function (req, res) {
+    var new_Data = new Beacon(req.body);
+    new_Data.save(function (err, docs) {
+        if(err)
+            console.log(err);
+        console.log('receive ' + req.body.status + ' message from')
+    });
     console.log(req.body);
     res.send('recv');
 }
