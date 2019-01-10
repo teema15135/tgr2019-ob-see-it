@@ -19,7 +19,7 @@ exports.getData = function (req, res) {
                     docs.forEach((doc) => {
                         result.push(doc.people);
                     });
-                    res.json({ result: result });
+                    res.json({ number_of_tourist: result });
                 });
     });
 
