@@ -45,9 +45,6 @@ exports.delBeacon = function (req, res) {
 }
 
 exports.addToML = function () {
-    var ago = Number(new Date()) - 36000000;
-    console.log('sending...');
-    console.log(ago);
     Beacon.find({
         "timestamp": {
             $gt: Number(new Date()) - 36000000
@@ -63,7 +60,7 @@ exports.addToML = function () {
         });
         new_ML.save(function(err, docs) {
             if(err) console.log(err);
-            console.log('record data');
+            console.log('data recorded');
         });
     });
 }

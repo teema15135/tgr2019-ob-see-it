@@ -5,18 +5,24 @@ var ML = mongoose.model('MLData');
 
 exports.getData = function (req, res) {
     console.log(req.query.hours);
-    ML
-        .find({})
-        .sort({ timestamp: -1 })
-        .limit(Number(req.query.hours))
-        .exec(function (err, docs) {
-            var result = [];
-            docs = docs.reverse()
-            docs.forEach((doc) => {
-                result.push(doc.people);
-            });
-            res.json({ result: result });
-        });
+    ML.countDocuments({}, function (errc, cnt) {
+        if (cnt < Number(req.query.hours))
+            res.json({ message: 'reqest error; more than existing data' })
+        else
+            ML
+                .find({})
+                .sort({ timestamp: -1 })
+                .limit(Number(req.query.hours))
+                .exec(function (err, docs) {
+                    var result = [];
+                    docs = docs.reverse()
+                    docs.forEach((doc) => {
+                        result.push(doc.people);
+                    });
+                    res.json({ result: result });
+                });
+    });
+
 }
 
 exports.predict = function (req, res) {
