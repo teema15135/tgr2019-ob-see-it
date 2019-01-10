@@ -10,7 +10,7 @@ exports.recvSensor = function (req, res) {
         pin: Number('0x' + payload.substr(4, 4)),
         pout: Number('0x' + payload.substr(12, 4)),
         temperature: Number('0x' + payload.substr(20, 4))/10.0,
-        humidity: Number('0x' + payload.substr(28, 2)/2)
+        humidity: Number('0x' + payload.substr(28, 2))/2
     }
     var new_Data = new Sensor(obj);
     new_Data.save(function (err, docs) {
