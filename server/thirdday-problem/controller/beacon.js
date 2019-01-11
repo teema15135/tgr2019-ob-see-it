@@ -7,7 +7,7 @@ var ML = mongoose.model('MLData');
 exports.recvBeacon = function (req, res) {
     var new_Data = new Beacon(req.body);
     new_Data.save(function (err, docs) {
-        if(err)
+        if (err)
             console.log(err);
         console.log('receive ' + req.body.status + ' message from')
     });
@@ -55,18 +55,30 @@ exports.addToML = function () {
         "timestamp": {
             $gt: Number(new Date()) - 36000000
         }
-    }, function(err, docs) {
+    }, function (err, docs) {
         var people = 0;
-        docs.forEach(function(doc) {
+        docs.forEach(function (doc) {
             if (doc.status == 'enter') people++;
             else people--;
         });
-        var new_ML = new ML({
-            people: people
-        });
-        new_ML.save(function(err, docs) {
-            if(err) console.log(err);
-            console.log('data recorded');
+
+        var Sensor = mongoose.model('SensorData');
+        Sensor.find({
+            'timestamp': {
+                $gt: Number(new Date()) - 36000000
+            }
+        }, function (err, docsSensor) {
+            docsSensor.forEach(function(docSensor) {
+                people += docSensor.pin;
+                people -= docSensor.pout;
+            });
+            var new_ML = new ML({
+                people: people
+            });
+            new_ML.save(function (err, docs) {
+                if (err) console.log(err);
+                console.log('data recorded');
+            })
         });
     });
 }
